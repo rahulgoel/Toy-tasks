@@ -41,12 +41,12 @@ def get_label(words):
         return 1
     return 2
 
-with open('toy_feats.txt', 'w') as feats, \
-     open('toy_tags.txt', 'w') as tags, \
-     open('toy_class.txt', 'w') as cls:
+with open('toy_feats_n.txt', 'w') as feats, \
+     open('toy_tags_n.txt', 'w') as tags, \
+     open('toy_class_n.txt', 'w') as cls:
 
     for index, line in enumerate(words_by_line):
         # print(line)
-        feats.write(' '.join(map(str,line)) + '\n')
-        tags.write(' '.join(map(str, tags_by_line[index])) + '\n')
-        cls.write(str(get_label(line)) + '\n')
+        feats.write('sent' + str(index) + ' ' + ' '.join(map(str,line)) + '\n')
+        tags.write('sent' + str(index) + ' ' + ' '.join(map(str, tags_by_line[index])) + '\n')
+        cls.write('sent' + str(index) + ' ' + str(get_label(line)) + '\n')
