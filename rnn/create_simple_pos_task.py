@@ -15,7 +15,7 @@ tag_count = Counter([w for line in tags_by_line for w in line])
 
 # print word_count, tag_count
 
-vocab_word = [word for word, count  in word_count.most_common(100)]
+vocab_word = [word for word, count  in word_count.most_common(5)]
 vocab_tag = [tag for tag, count in tag_count.most_common(100)]
 # print vocab_word, vocab_tag
 
